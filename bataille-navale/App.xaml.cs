@@ -28,6 +28,7 @@ namespace bataille_navale
         /// </summary>
         public App()
         {
+            int a;
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
