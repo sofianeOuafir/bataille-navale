@@ -26,5 +26,21 @@ namespace bataille_navale
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (pseudo.Text != null && !string.IsNullOrWhiteSpace(pseudo.Text))
+            {
+                String atransferer;
+                atransferer = (String)pseudo.Text;
+                Application.Current.Resources["monObjet"] = atransferer;
+                Frame rootFrame = Window.Current.Content as Frame;
+                Frame.Navigate(typeof(pageJeu));
+            }
+            else
+            {
+                erreur.Text = "Entrez un pseudo svp";
+            }
+        }
     }
 }

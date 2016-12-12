@@ -97,6 +97,9 @@
     </Compile>
     <Compile Include="Bateau.cs" />
     <Compile Include="Jeu.cs" />
+    <Compile Include="pageAccueil.xaml.cs">
+      <DependentUpon>pageAccueil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pageJeu.xaml.cs">
       <DependentUpon>pageJeu.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="pageAccueil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pageJeu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -15,6 +15,12 @@ namespace bataille_navale
 
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.TextBlock erreur; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.TextBox pseudo; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.ListBox listBox; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
         private bool _contentLoaded;
 
         /// <summary>

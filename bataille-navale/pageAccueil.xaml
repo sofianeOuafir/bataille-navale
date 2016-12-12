@@ -7,7 +7,28 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource AppBarBackground}" Margin="0,0,-146,-126" Height="766" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="78*"></ColumnDefinition>
+            <ColumnDefinition Width="349*"></ColumnDefinition>
+            <ColumnDefinition Width="79*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="0"  Text="Jeu de la Bataille Navale" TextAlignment="Center" FontSize="30" Padding="10" FontWeight="ExtraBold" Margin="0,0,-0.333,98"  ></TextBlock>
+        <TextBlock x:Name="erreur" Grid.Column="1" Grid.Row="0" Text="" TextAlignment="Center" FontSize="25" Margin="0,73,-0.333,0" Foreground="Red" FontWeight="Bold" ></TextBlock>
+        <TextBox x:Name="pseudo"  Grid.Column="1" Grid.Row="1" PlaceholderText=" Pseudo : " Margin="58,85.333,62,10.333"></TextBox>
+        <TextBlock  Grid.Column="1" Grid.Row="2" Text=" Saisissez votre niveau de jeu" TextAlignment="Center" FontWeight="Bold" Margin="0,69.667,0,0" FontSize="18"></TextBlock>
+        <ListBox x:Name="listBox" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Height="57" Margin="0,0,0,0"  VerticalAlignment="Top" />
+
+        <Button Grid.Column="1" Grid.Row="4" FontSize="20" Background="Azure"  Width="109" Margin="240,39.333,0,49.333" Click="Button_Click" >Jouer</Button>
 
     </Grid>
 </Page>
