@@ -20,10 +20,26 @@ namespace bataille_navale
 
         public Jeu(int nbBateaux)
         {
-            bateaux = new List<Bateau>();
-            for(var i = 0; i < nbBateaux; i++)
+            List<String> tableau = new List<string>();
+            int k = 0;
+            for(var row = 0; row < 6; row++)
             {
-                Bateau unBateau = new Bateau();
+                for(var col = 0; col < 4; col++)
+                {
+                    tableau.Add(row + "," + col);
+                }
+            }
+
+            bateaux = new List<Bateau>();
+            Random randomObject = new Random();
+            int number;
+            var interval = 24;
+            for (var i = 0; i < nbBateaux; i++)
+            {
+                number = randomObject.Next(0, interval);
+                Bateau unBateau = new Bateau(int.Parse(tableau[number].Split(',')[0]), int.Parse(tableau[number].Split(',')[1]));
+                tableau.RemoveAt(number);
+                interval--;
                 bateaux.Add(unBateau);
             }
         }

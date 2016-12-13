@@ -5,12 +5,14 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
@@ -23,6 +25,7 @@ namespace bataille_navale
     /// </summary>
     public sealed partial class pageJeu : Page
     {
+        Jeu monJeu;
         public pageJeu()
         {
             this.InitializeComponent();
@@ -31,17 +34,46 @@ namespace bataille_navale
             {
                 for (var j = 0; j < 4; j++)
                 {
-                    Rectangle unRectangle = new Rectangle();
-                    unRectangle.Width = 40;
-                    unRectangle.Height = 40;
-                    unRectangle.Stroke = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 0, 0));
-                    unRectangle.StrokeThickness = 1; 
-
-                    Grid.SetRow(unRectangle, i);
-                    Grid.SetColumn(unRectangle, j);
-                    myGrid.Children.Add(unRectangle);
+                    Button unButton = new Button();
+                    unButton.Width = 40;
+                    unButton.Height = 40;
+                    Grid.SetColumn(unButton, j);
+                    Grid.SetRow(unButton, i);
+                    unButton.Background = new SolidColorBrush(Colors.White);
+                    unButton.BorderBrush = new SolidColorBrush(Colors.Black);
+                    unButton.BorderThickness = new Thickness(1);
+                    unButton.SetValue(Grid.ColumnProperty, j);
+                    unButton.SetValue(Grid.RowProperty, i);
+                    unButton.Click += colorButton;
+                    myGrid.Children.Add(unButton);
                 }
             }
+            monJeu = new Jeu(6);
         }
+
+        private void colorButton(object sender, RoutedEventArgs e)
+        {
+            bool touche = false;
+            Button buttonClicked = (Button)sender;
+            foreach(Bateau unBateau in monJeu.Bateaux)
+            {
+                if(buttonClicked.GetValue(Grid.RowProperty).ToString() == unBateau.Row.ToString() && buttonClicked.GetValue(Grid.ColumnProperty).ToString() == unBateau.Column.ToString())
+                {
+                    touche = true;
+                }
+            }
+
+            if(touche)
+            {
+                buttonClicked.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0));
+                myText.Text = "touché !";
+            }
+            else
+            {
+                buttonClicked.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 0, 255));
+                myText.Text = "Coulé !";
+            }
+        }
+
     }
 }

@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-12-12T08:33:34.121</Modified>
+      <Modified>2016-12-13T09:25:55.188</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\bin\x86\Debug\bataille-navale.exe">
       <PackagePath>entrypoint\bataille-navale.exe</PackagePath>
-      <Modified>2016-12-12T08:33:33.419</Modified>
+      <Modified>2016-12-13T09:25:54.839</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sofia\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -488,7 +488,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\bin\x86\Debug\bataille-navale.xr.xml">
       <PackagePath>bataille-navale.xr.xml</PackagePath>
-      <Modified>2016-12-12T08:33:33.156</Modified>
+      <Modified>2016-12-12T10:43:18.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -497,11 +497,11 @@
     <AppxPackagedFile Include="C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-12-12T08:33:33.913</Modified>
+      <Modified>2016-12-12T11:10:00.318</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\bin\x86\Debug\Core\bataille-navale.exe">
       <PackagePath>bataille-navale.exe</PackagePath>
-      <Modified>2016-12-12T08:33:34.117</Modified>
+      <Modified>2016-12-13T09:25:55.176</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

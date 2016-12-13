@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <StackPanel>
-        <Grid BorderBrush="Black" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="myGrid">
+        <Grid x:ConnectionId='1' BorderBrush="Black" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="myGrid">
             <Grid.RowDefinitions >
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -25,6 +25,7 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <TextBlock Name="myText"></TextBlock>
+        <TextBlock x:ConnectionId='2' Name="myText"></TextBlock>
     </StackPanel>
 </Page>
+

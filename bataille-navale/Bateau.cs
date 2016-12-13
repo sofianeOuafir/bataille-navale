@@ -27,11 +27,11 @@ namespace bataille_navale
             }
         }
 
-        public Bateau()
+        public Bateau(int Row, int Column)
         {
-            Random randomObject = new Random();
-            row = randomObject.Next(0, 6);
-            column = randomObject.Next(0, 4);
+            //Random randomObject = new Random();
+            row = Row; //randomObject.Next(0, 6); 
+            column = Column; //randomObject.Next(0, 4);
         }
     }
 
