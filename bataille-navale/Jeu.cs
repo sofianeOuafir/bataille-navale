@@ -9,6 +9,8 @@ namespace bataille_navale
     class Jeu
     {
         List<Bateau> bateaux;
+        int nbBateaux;
+        int nbEssai;
 
         public List<Bateau> Bateaux
         {
@@ -18,8 +20,36 @@ namespace bataille_navale
             }
         }
 
-        public Jeu(int nbBateaux)
+        public int NbBateaux
         {
+            get
+            {
+                return nbBateaux;
+            }
+
+            set
+            {
+                nbBateaux = value;
+            }
+        }
+
+        public int NbEssai
+        {
+            get
+            {
+                return nbEssai;
+            }
+
+            set
+            {
+                nbEssai = value;
+            }
+        }
+
+        public Jeu(int NbBateaux, int NbEssai)
+        {
+            this.NbBateaux = NbBateaux;
+            this.nbEssai = NbEssai;
             List<String> tableau = new List<string>();
             int k = 0;
             for(var row = 0; row < 6; row++)
@@ -34,7 +64,7 @@ namespace bataille_navale
             Random randomObject = new Random();
             int number;
             var interval = 24;
-            for (var i = 0; i < nbBateaux; i++)
+            for (var i = 0; i < NbBateaux; i++)
             {
                 number = randomObject.Next(0, interval);
                 Bateau unBateau = new Bateau(int.Parse(tableau[number].Split(',')[0]), int.Parse(tableau[number].Split(',')[1]));

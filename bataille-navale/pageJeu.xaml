@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <StackPanel>
-        <Grid BorderBrush="Black" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="myGrid">
+        <Grid BorderBrush="Black" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="myGrid" HorizontalAlignment="Center">
             <Grid.RowDefinitions >
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -25,6 +25,17 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <TextBlock Name="myText"></TextBlock>
+        <TextBlock Name="myText" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+
+        <StackPanel.Resources>
+            <!-- Animates the rectangle's opacity. -->
+            <Storyboard x:Name="myStoryboard">
+                <ColorAnimation To="Blue" 
+                                    Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:1"
+                                AutoReverse="True"/>
+            </Storyboard>
+        </StackPanel.Resources>
     </StackPanel>
 </Page>

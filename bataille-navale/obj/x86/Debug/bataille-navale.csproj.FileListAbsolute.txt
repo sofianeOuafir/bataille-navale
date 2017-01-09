@@ -192,3 +192,8 @@ C:\Users\sofia\Documents\Visual Studio 2015\Projects\bataille-navale\bataille-na
 C:\Users\sofia\Documents\Visual Studio 2015\Projects\bataille-navale\bataille-navale\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\sofia\Documents\Visual Studio 2015\Projects\bataille-navale\bataille-navale\obj\x86\Debug\resources.en-us.resfiles.intermediate
 C:\Users\sofia\Documents\Visual Studio 2015\Projects\bataille-navale\bataille-navale\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\bin\x86\Debug\pageAccueil.xbf
+C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\obj\x86\Debug\pageAccueil.g.i.cs
+C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\obj\x86\Debug\pageAccueil.g.cs
+C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\obj\x86\Debug\pageAccueil.xaml
+C:\Users\sofia\documents\visual studio 2015\Projects\bataille-navale\bataille-navale\obj\x86\Debug\pageAccueil.xbf

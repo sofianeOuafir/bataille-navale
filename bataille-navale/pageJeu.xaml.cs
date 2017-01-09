@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
+using System.Windows;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, voir la page http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,14 +30,13 @@ namespace bataille_navale
         public pageJeu()
         {
             this.InitializeComponent();
-
             for (var i = 0; i < 6; i++)
             {
                 for (var j = 0; j < 4; j++)
                 {
                     Button unButton = new Button();
-                    unButton.Width = 40;
-                    unButton.Height = 40;
+                    unButton.Width = 80;
+                    unButton.Height = 80;
                     Grid.SetColumn(unButton, j);
                     Grid.SetRow(unButton, i);
                     unButton.Background = new SolidColorBrush(Colors.White);
@@ -48,7 +48,26 @@ namespace bataille_navale
                     myGrid.Children.Add(unButton);
                 }
             }
-            monJeu = new Jeu(6);
+            int nbBateau = 0;
+            int nbEssai = 0;
+            
+            if(Application.Current.Resources["level"].ToString() == "Facile")
+            {
+                nbBateau = 9;
+                nbEssai = 18;
+            }
+            else if(Application.Current.Resources["level"].ToString() == "Moyen")
+            {
+                nbBateau = 6;
+                nbEssai = 12;
+            }
+            else
+            {
+                nbBateau = 3;
+                nbEssai = 6;
+            }
+
+            monJeu = new Jeu(nbBateau, nbEssai);
         }
 
         private void colorButton(object sender, RoutedEventArgs e)
@@ -65,15 +84,59 @@ namespace bataille_navale
 
             if(touche)
             {
-                buttonClicked.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0));
-                myText.Text = "touché !";
+                
+                if (monJeu.NbBateaux > 0 && monJeu.NbEssai != 0)
+                {
+                    monJeu.NbBateaux -= 1;
+                    buttonClicked.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0));
+                    if (monJeu.NbBateaux != 0)
+                    {
+                        myText.Text = "Touché coulé! Plus que " + monJeu.NbBateaux + " bateaux à toucher";
+                    }
+                    else
+                    {
+                        myText.Text = "Vous avez gagné !";
+                    }
+                }
+                else if(monJeu.NbBateaux == 0)
+                {
+                    myText.Text = "Vous avez gagné !";
+                }
+                else
+                {
+                    myText.Text = "Vous avez perdu !";
+                }
             }
             else
             {
-                buttonClicked.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 0, 255));
-                myText.Text = "Coulé !";
+                if (monJeu.NbEssai > 0 && monJeu.NbBateaux != 0)
+                {
+                    monJeu.NbEssai -= 1;
+                    myStoryboard.Stop();
+                    SolidColorBrush white = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255));
+                    buttonClicked.Background = white;
+                    buttonClicked.Name = "myClickedButton";
+                    Storyboard.SetTargetName(myStoryboard, "myClickedButton");
+                    myStoryboard.Begin();
+                    myText.Text = "A l'eau! Plus que " + monJeu.NbEssai + " tentatives";
+                    buttonClicked.Name = "";
+                    if (monJeu.NbEssai == 0)
+                    {
+                        myText.Text = "Vous avez perdu !";
+                    }
+                }
+                else if (monJeu.NbEssai == 0)
+                {
+                    myText.Text = "Vous avez perdu !";
+                }
+                else
+                {
+                    myText.Text = "Vous avez gagné !";
+                }
             }
         }
+
+
 
     }
 }

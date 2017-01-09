@@ -132,15 +132,17 @@ namespace bataille_navale.bataille_navale_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "bataille_navale.pageJeu";
+            _typeNameTable = new string[4];
+            _typeNameTable[0] = "bataille_navale.pageAccueil";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "bataille_navale.pageJeu";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::bataille_navale.pageJeu);
+            _typeTable = new global::System.Type[4];
+            _typeTable[0] = typeof(global::bataille_navale.pageAccueil);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::bataille_navale.pageJeu);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -175,7 +177,8 @@ namespace bataille_navale.bataille_navale_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_pageJeu() { return new global::bataille_navale.pageJeu(); }
+        private object Activate_0_pageAccueil() { return new global::bataille_navale.pageAccueil(); }
+        private object Activate_3_pageJeu() { return new global::bataille_navale.pageJeu(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -187,9 +190,9 @@ namespace bataille_navale.bataille_navale_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  bataille_navale.pageJeu
+            case 0:   //  bataille_navale.pageAccueil
                 userType = new global::bataille_navale.bataille_navale_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_pageJeu;
+                userType.Activator = Activate_0_pageAccueil;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -200,6 +203,13 @@ namespace bataille_navale.bataille_navale_XamlTypeInfo
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::bataille_navale.bataille_navale_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  bataille_navale.pageJeu
+                userType = new global::bataille_navale.bataille_navale_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_pageJeu;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;
