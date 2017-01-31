@@ -1,1 +1,1 @@
-# bataille-navale
+This is a game developed in C#. 
